@@ -6,7 +6,6 @@
  * @return list of [name, url] maps for published file(s)
 */
 def call(String path, String bucket, String region = 'us-east-1') {
-  return []
   step([$class: 'S3BucketPublisher',
     consoleLogLevel: 'INFO',
     dontWaitForConcurrentBuildCompletion: false,

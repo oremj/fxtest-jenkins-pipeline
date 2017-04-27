@@ -18,6 +18,7 @@ def call(String project,
          String logPath = null,
          String groupSymbol = null,
          String groupName = null) {
+  return
   machine = getMachine()
   payload = [
     taskId: UUID.randomUUID().toString(),

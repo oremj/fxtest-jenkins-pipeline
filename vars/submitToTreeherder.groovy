@@ -18,7 +18,6 @@ def call(String project,
          String logPath = null,
          String groupSymbol = null,
          String groupName = null) {
-  return
   machine = getMachine()
   payload = [
     taskId: UUID.randomUUID().toString(),
@@ -39,6 +38,7 @@ def call(String project,
     logs: getLogs(logPath),
     version: 1
   ]
+  return
 
   // TODO include ec2-metadata output in payload
   exchange = "exchange/${PULSE_USR}/jobs"

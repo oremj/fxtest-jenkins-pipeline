@@ -13,6 +13,7 @@ def call(String exchange,
     def jsonSchemaValidator = new org.mozilla.fxtest.JsonSchemaValidator()
     jsonSchemaValidator.validate(message, schema)
   }
+  return
   def pulse = new org.mozilla.fxtest.Pulse()
   pulse.publish(exchange, routingKey, message)
 }

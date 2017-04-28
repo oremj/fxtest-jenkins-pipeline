@@ -11,7 +11,7 @@ def call(String exchange,
          String schema = null) {
   if ( schema != null ) {
     def jsonSchemaValidator = new org.mozilla.fxtest.JsonSchemaValidator()
-    //jsonSchemaValidator.validate(message, schema)
+    jsonSchemaValidator.validate(message, schema)
   }
 
   def pulse = new org.mozilla.fxtest.Pulse()

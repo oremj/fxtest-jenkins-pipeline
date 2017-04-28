@@ -13,6 +13,7 @@ import com.github.fge.jsonschema.main.JsonSchemaFactory
 
 @NonCPS
 def validate(payload, schema) {
+  return
   def mapper = new ObjectMapper()
   def yamlFactory = new YAMLFactory()
   def jsonSchemaFactory = JsonSchemaFactory.byDefault()

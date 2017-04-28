@@ -15,8 +15,8 @@ import com.github.fge.jsonschema.main.JsonSchemaFactory
 def validate(payload, schema) {
   def mapper = new ObjectMapper()
   def yamlFactory = new YAMLFactory()
-  return
   def jsonSchemaFactory = JsonSchemaFactory.byDefault()
+  return
   def schemaJsonNode = mapper.readTree(yamlFactory.createParser(schema))
   def jsonSchema = jsonSchemaFactory.getJsonSchema(schemaJsonNode)
   def payloadJsonNode = mapper.readTree(payload)

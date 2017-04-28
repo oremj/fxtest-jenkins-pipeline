@@ -16,8 +16,8 @@ def validate(payload, schema) {
   def mapper = new ObjectMapper()
   def yamlFactory = new YAMLFactory()
   def jsonSchemaFactory = JsonSchemaFactory.byDefault()
-  def schemaJsonNode = mapper.readTree(yamlFactory.createParser(schema))
   return
+  def schemaJsonNode = mapper.readTree(yamlFactory.createParser(schema))
   def jsonSchema = jsonSchemaFactory.getJsonSchema(schemaJsonNode)
   def payloadJsonNode = mapper.readTree(payload)
   def report = jsonSchema.validate(payloadJsonNode)

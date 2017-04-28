@@ -46,7 +46,6 @@ def call(String project,
   publishToPulse(exchange, routingKey, JsonOutput.toJson(payload), schema)
   treeherderURL = "https://treeherder.mozilla.org/#/jobs?repo=${payload.productName}&revision=${payload.origin.revision}"
   echo "Results will be available to view at $treeherderURL"
-  return
 }
 
 def getMachine() {

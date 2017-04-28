@@ -17,10 +17,10 @@ def validate(payload, schema) {
   def yamlFactory = new YAMLFactory()
   def jsonSchemaFactory = JsonSchemaFactory.byDefault()
   def schemaJsonNode = mapper.readTree(yamlFactory.createParser(schema))
+  return
   def jsonSchema = jsonSchemaFactory.getJsonSchema(schemaJsonNode)
   def payloadJsonNode = mapper.readTree(payload)
   def report = jsonSchema.validate(payloadJsonNode)
-  return
   if ( !report.isSuccess() ) {
     for ( message in report ) {
       echo "$message"

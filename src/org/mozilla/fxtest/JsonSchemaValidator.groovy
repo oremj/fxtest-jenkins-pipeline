@@ -7,15 +7,15 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 
 @Grab(group='com.github.fge', module='json-schema-validator', version='2.2.5')
-import com.github.fge.jackson.JsonLoader
+// import com.github.fge.jackson.JsonLoader
 import com.github.fge.jsonschema.core.exceptions.ProcessingException
 import com.github.fge.jsonschema.main.JsonSchemaFactory
+import com.github.fge.jsonschema.util.JsonLoader
 
 @NonCPS
 def validate(payload, schema) {
   def mapper = new ObjectMapper()
   def yamlFactory = new YAMLFactory()
-  return
   def jsonSchemaFactory = JsonSchemaFactory.byDefault()
   def schemaJsonNode = mapper.readTree(yamlFactory.createParser(schema))
   def jsonSchema = jsonSchemaFactory.getJsonSchema(schemaJsonNode)

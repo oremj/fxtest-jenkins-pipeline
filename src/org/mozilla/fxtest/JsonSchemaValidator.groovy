@@ -13,7 +13,6 @@ import com.github.fge.jsonschema.main.JsonSchemaFactory
 
 @NonCPS
 def validate(payload, schema) {
-  return
   def mapper = new ObjectMapper()
   def yamlFactory = new YAMLFactory()
   def jsonSchemaFactory = JsonSchemaFactory.byDefault()
@@ -21,6 +20,7 @@ def validate(payload, schema) {
   def jsonSchema = jsonSchemaFactory.getJsonSchema(schemaJsonNode)
   def payloadJsonNode = mapper.readTree(payload)
   def report = jsonSchema.validate(payloadJsonNode)
+  return
   if ( !report.isSuccess() ) {
     for ( message in report ) {
       echo "$message"

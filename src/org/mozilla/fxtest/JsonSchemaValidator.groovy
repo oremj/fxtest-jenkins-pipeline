@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper
 @Grab(group='com.fasterxml.jackson.dataformat', module='jackson-dataformat-yaml', version='2.8.3')
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 
-@Grab(group='com.github.fge', module='json-schema-validator', version='2.2.5')
 // import com.github.fge.jackson.JsonLoader
 import com.github.fge.jsonschema.core.exceptions.ProcessingException
 import com.github.fge.jsonschema.main.JsonSchemaFactory
